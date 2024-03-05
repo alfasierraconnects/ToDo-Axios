@@ -9,17 +9,44 @@ putBtn.addEventListener("click", putTodo);
 deleteBtn.addEventListener("click", deleteTodo);
 
 function getTodos() {
-  // Write your code here
+  axios
+    .get("https://crudcrud.com/api/4f30ef978b0a425d841666ca864aa4a6/todo")
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 }
 
 function postTodo() {
-  // Write your code here
+  axios
+    .post("https://crudcrud.com/api/4f30ef978b0a425d841666ca864aa4a6/todo", {
+      title: "Meet Doctor",
+      completed: false,
+    })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 }
 
 function putTodo() {
-  // Write your code here
+  axios
+    .put(
+      "https://crudcrud.com/api/4f30ef978b0a425d841666ca864aa4a6/todo/65e72f3c1d380403e8714923",
+      {
+        title: "Meet Doctor",
+        completed: true,
+      }
+    )
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 }
 
 function deleteTodo() {
-  // Write your code here
+  axios
+    .delete(
+      "https://crudcrud.com/api/4f30ef978b0a425d841666ca864aa4a6/todo/65e72f3c1d380403e8714923",
+      {
+        title: "Meet Doctor",
+        completed: true,
+      }
+    )
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 }
